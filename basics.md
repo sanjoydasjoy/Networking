@@ -3,8 +3,10 @@
 [Protocols](#protocols) <br>
 [How Data is Transfered](#how-data-is-transfered) <br>
 [Ports](#ports) <br>
-
-
+[How Countries Connected](#how-countries-connected) <br>
+[LAN MAN WAN](#lan-man-wan) <br>
+[Modem and Router](#modem-and-router) <br>
+[Topologies](#topologies) <br>
 
 
 <br>
@@ -225,6 +227,168 @@ Port numbers are divided into three categories:
    - Command: `curl ifconfig.me`
    - Visit: [What Is My ISP](https://www.whatismyisp.com/)
      
+
+<br><br><br>
+
+---
+
+<br><br><br>
+
+
+
+## How Countries Connected
+
+
+
+
+### **How Do Two Computers Communicate?**  
+
+<br>
+
+
+There are **two main ways** computers communicate:  
+
+1️. **Guided Communication (Wired)**
+   - A **fixed physical path** is used for communication.  
+   - Examples: **Ethernet cables, fiber optic cables, coaxial cables.**  
+
+2.  **Unguided Communication (Wireless)**
+   - Data is transmitted **without a fixed path**, through airwaves.  
+   - Examples: **Wi-Fi, Bluetooth, 3G, 4G, LTE, 5G, satellites.**  
+
+<br><br>
+
+### **How Are Countries Connected to the Internet?**  
+
+#### **1️. Physically (Wired Communication)**  
+- **Optical Fiber Cables** – Used for high-speed internet connections.  
+- **Coaxial Cables** – Used for cable internet and TV connections.  
+- **Submarine Cables** – Undersea fiber optic cables that connect different countries.  
+  - 🌍 **See the global submarine cable map here:**  
+    [https://www.submarinecablemap.com/](https://www.submarinecablemap.com/)  
+
+#### **2️. Wirelessly (Wireless Communication)**  
+- **Wi-Fi** – Short-range wireless internet.  
+- **Bluetooth** – Short-range communication between devices.  
+- **3G, 4G, LTE, 5G** – Mobile internet provided by cellular networks.  
+- **Satellites** – Used for remote areas but slower than fiber optics.  
+
+<br><br>
+
+### **Why Do We Use Undersea Cables Instead of Satellites?**  
+
+**Undersea cables are used because they are much faster and more reliable than satellites.**  
+- **Lower latency** – Data travels through fiber optic cables faster than through satellites.  
+- **Higher bandwidth** – Cables can carry **much more data** than satellites.  
+- **More stable** – Unlike satellites, cables aren’t affected by weather conditions.  
+
+ 
+ **Satellites are still useful** for remote areas, disaster recovery, and military communication, but **undersea cables handle most of the world's internet traffic**.  
+
+
+
+<br><br><br>
+
+---
+
+<br><br><br>
+
+
+## LAN MAN WAN
+
+
+
+### **LAN, MAN, WAN: Types of Networks**  
+
+#### **1️⃣ LAN (Local Area Network)**  
+- A **LAN** connects devices in a **small area**, like a **home** or **office**.  
+- It can support **many devices** (not just 5 or 10, but thousands if needed).  
+- Devices in a LAN communicate using **Ethernet cables**, **Wi-Fi**, or **Bluetooth**.  
+- **Network adapters and switches** are used to connect and manage devices.  
+- **LANs can also work with wireless networks (Wi-Fi)** for convenient device connections.  
+
+<br><br>
+
+#### **2️⃣ MAN (Metropolitan Area Network)**  
+- A **MAN** spans a **larger geographic area**, typically across a **city** or **large campus**.  
+- It connects multiple LANs within a city, providing high-speed communication across urban areas.  
+
+<br><br>
+
+#### **3️⃣ WAN (Wide Area Network)**  
+- A **WAN** connects networks over **large distances**, such as between **different countries** or across continents.  
+- The **internet** is an example of a global WAN, connecting millions of LANs and MANs worldwide.  
+- **WANs** are commonly connected using **optical fiber cables**, providing high-speed communication over long distances.  
+
+<br><br>
+
+### **Wide Area Network Technologies**  
+- **SONET (Synchronous Optical Networking)** – A technology used for high-speed **optical fiber networks**, providing reliable and fast data transmission over long distances.  
+- **Frame Relay** – An older **WAN technology** that uses packet-switched networks to provide efficient and cost-effective data transfer across wide areas, though it’s being phased out in favor of newer technologies like **MPLS**.  
+
+<br><br><br>
+
+### **The Internet: A Collection of LANs, MANs, and WANs**  
+- The **internet** is essentially a **global network** made up of many interconnected LANs, MANs, and WANs.  
+- These networks are connected to each other through various technologies, allowing communication between devices worldwide.
+
+
+
+<br><br><br>
+
+---
+
+<br><br><br>
+
+
+
+## Modem and Router
+
+### Modem vs. Router
+
+#### **1️⃣ Modem (Modulator-Demodulator)**  
+- Converts **digital signals** from a computer into **analog signals** for transmission over telephone lines, and vice versa.  
+- Example: When you send data (like an image) over an old **DSL connection**, the modem **modulates** it into electrical signals. At the receiving end, another modem **demodulates** it back into digital form.  
+- Essential for **connecting to the internet** if using DSL or cable internet.  
+
+<br><br>
+
+
+#### **2️⃣ Router**  
+- A device that **routes data packets** between devices and networks based on **IP addresses**.  
+- It **distributes** the internet connection from the modem to multiple devices in a network (Wi-Fi or wired).  
+- Helps different devices in a network **communicate** with each other.  
+
+<br><br>
+
+### **How They Work Together:**  
+- The **modem connects to the ISP** (Internet Service Provider) and brings internet to your home.  
+- The **router distributes** that internet to multiple devices via **Wi-Fi or Ethernet cables**.  
+- Modern devices often combine both into a **single modem-router**.  
+
+
+
+<br><br><br>
+
+---
+
+<br><br><br>
+
+
+## Topologies
+
+### **Network Topologies: How Devices Are Connected**  
+
+1️⃣ **Bus Topology** – All devices share a **single central cable**; data travels in both directions.  
+
+2️⃣ **Ring Topology** – Devices are connected in a **closed loop**, and data moves in **one direction** (or both in dual-ring).  
+
+3️⃣ **Star Topology** – All devices connect to a **central hub/switch**, making it **easy to manage** but dependent on the hub.  
+
+4️⃣ **Tree Topology (Bus-Star Hybrid)** – A **hierarchical structure** combining multiple **star networks** connected by a **bus**.  
+
+5️⃣ **Mesh Topology** – Every device connects to **every other device**, providing **high reliability** but requiring more cables.  
+
 
 <br><br><br>
 
