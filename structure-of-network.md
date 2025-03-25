@@ -1,7 +1,7 @@
 # Structure of Network
 
 [OSI Model](#osi-model) <br>
-[TCP/IP Model](#tcp/ip-model) <br>
+[TCP IP Model](#tcp-ip-model) <br>
 [Real World Example](#real-world-example) <br>
 
 
@@ -104,7 +104,7 @@ ___
 <br>
 
 
-## TCP/IP Model
+## TCP IP Model
 
 - It stands for Internet Protocol Suite.
 - This model has 5 layers:
@@ -134,30 +134,30 @@ ME ->A->P->S->T->N->D->P->My Router -> ISP -> ISP -> His Router -> P->D->N->T->S
 
 <br>
 
-- 1. Your device (computer, phone, etc.) is sending data:  
-   - The data moves through the OSI layers in your device, reaching the Physical Layer.  
+- 1. My device (computer, phone, etc.) is sending data:  
+   - The data moves through the OSI layers in my device, reaching the Physical Layer.  
    - The Physical Layer converts the data into signals (electrical for Ethernet, optical for fiber, or radio waves for Wi-Fi).
      
 <br>
 
-2. Your router receives these signals:  
-   - Since the router is physically connected to your device (via cable or Wi-Fi), it receives the signals at its own Physical Layer.  
+2. My router receives these signals:  
+   - Since the router is physically connected to my device (via cable or Wi-Fi), it receives the signals at its own Physical Layer.  
    - The router processes the data through its OSI layers (moving from the Physical Layer up to the Network Layer).  
    - The router reads the destination IP address in the Network Layer and decides where to send the data next.
   
      
 <br>
 
-3. Your router sends the data to the internet:  
+3. My router sends the data to the internet:  
    - The router converts the data back into signals (like electrical pulses or Wi-Fi signals).  
-   - It sends those signals to your ISP (Internet Service Provider).  
+   - It sends those signals to my ISP (Internet Service Provider).  
    - The ISP routes the data across the internet, through multiple network devices (other routers, servers, etc.).  
 
 <br>
 
-4. Your friend's router receives the data:  
+4. My friend's router receives the data:  
    - The router receives incoming data signals from the ISP and converts them back into a stream of bits at the Physical Layer.  
-   - The Data Link Layer checks the MAC address and ensures the data is meant for a device in your friend's network.  
+   - The Data Link Layer checks the MAC address and ensures the data is meant for a device in my friend's network.  
    - The Network Layer reads the destination IP address to determine which device in the network should receive the data.  
    - The Transport Layer reassembles packets and ensures error checking before passing the data upwards.  
    - The Session Layer manages the connection and ensures the correct application receives the data.  
