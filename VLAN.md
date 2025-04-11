@@ -68,34 +68,79 @@ Instead of using VLAN 1, we should:
 
 <br>
 
-### 🔹 2. **Data VLAN**  
-- Carries **user traffic** like browsing, emails, apps.
-- By default, all ports are in VLAN 1 (which is a data VLAN by default).
-- 💡 Create your own VLANs (e.g., VLAN 10 for students, VLAN 20 for teachers).
+
+
+### 🔹 **Data VLAN**  
+Think of this as the **main road** for normal traffic like web browsing, emails, file sharing — the kind of stuff you do on your laptop or phone.
+
+🧠 **What’s a VLAN again?**  
+A **Virtual LAN** groups devices **logically**, not physically. So even if devices are plugged into the same switch, they can be isolated in separate VLANs.
+
+Now back to **Data VLANs**:
+
+By default, **all ports on a switch are in VLAN 1**, and VLAN 1 is also used internally by the switch.
+
+💡 **Why avoid VLAN 1 for user data?**  
+Because VLAN 1 is used for **management and control traffic**, mixing user data here can cause **security and troubleshooting issues**.  
+➡️ So we **create custom VLANs** like:
+- VLAN 10 → for students  
+- VLAN 20 → for staff
 
 <br>
 
-### 🔹 3. **Native VLAN**  
-- Used **only on trunk links** (links that carry multiple VLANs between switches).
-- Frames from this VLAN are **not tagged**.
-- 💡 Make sure the **Native VLAN matches** on both ends of the trunk.
+### 🔹 **Native VLAN**
+
+Okay, this one’s specific to **trunk links**.
+
+🧠 **Trunk link?**  
+A **trunk** is a cable that connects **switch-to-switch** (not switch to PC). It can carry traffic for **multiple VLANs** at once.
+
+Here’s the twist:
+
+Normally, VLAN traffic is **tagged** with its VLAN ID, so switches know where it belongs.
+
+But traffic for the **native VLAN is NOT tagged**.
+
+💡 Why does this matter?  
+If **both switches don’t agree** on what the native VLAN is, you’ll get **miscommunication**, like frames going into the wrong VLAN.  
+➡️ So we always **manually set** the native VLAN to the **same ID** (e.g., VLAN 99) on both sides of the trunk.
 
 <br>
 
-### 🔹 4. **Management VLAN**  
-- Used for managing the switch via **SSH, Telnet, or SNMP**.
-- Should **NOT** be the same as a user/data VLAN.
-- 💡 Typically, you'll create a separate VLAN (like VLAN 99) just for switch management.
+### 🔹 **Management VLAN**
+
+This is the VLAN that your **IT person uses to access the switch remotely**.
+
+🧠 **What do you mean by access the switch?**  
+You can log into a switch using **SSH or Telnet** (like a terminal for the switch). That traffic needs an **IP address**, and that IP is assigned to a **VLAN interface**, usually a separate one called the **management VLAN**.
+
+💡 Why separate it?  
+You don’t want **random users** accessing the switch.  
+➡️ So we **isolate this VLAN** and connect only **IT/admin systems** to it.
+
+Example:  
+VLAN 99 is used just for managing the switch — you assign it an IP like `192.168.99.1`.
 
 <br>
 
-### 🔹 5. **Voice VLAN**  
-- Special VLAN for **VoIP (Voice over IP)** phones.
-- Needs:
-  - Guaranteed bandwidth
-  - Low delay (less than **150 ms**)
-  - High priority traffic (QoS)
-- 💡 This helps keep **voice calls smooth** and not laggy.
+### 🔹 **Voice VLAN**
+
+Used for **VoIP phones** — these are phones that use the internet instead of traditional telephone lines.
+
+🧠 Why does voice traffic need a separate VLAN?  
+Because voice is **super sensitive to delays and jitter**. If a voice packet arrives late or out of order, the call sounds glitchy.
+
+💡 Benefits of a separate Voice VLAN:  
+- You can apply **QoS (Quality of Service)** rules to **prioritize voice packets**.  
+- Keeps voice traffic away from **regular data traffic**, so it doesn’t get slowed down.
+
+Example:  
+- A port on the switch connects to a **VoIP phone**.  
+- The phone has a **PC plugged into it**.  
+- That port handles **two VLANs**:
+  - Voice VLAN → for the phone  
+  - Data VLAN → for the PC
+
 
 <br>
 
