@@ -3,6 +3,12 @@
 - Defines rules for how data is transmitted over those cables.
 - Technical name for ethernet is 802.3
 - If we buy an Ethernet NIC card, it operates up to Layer 2 of the OSI model
+- LLC is the part of driver, its 802.2
+- MAC (half of data link layer) and physical layer is basically the ethernet and called 802.3
+
+  
+<img src="assets/ethernet1.png"  width="400">
+
 
 <br>
 
