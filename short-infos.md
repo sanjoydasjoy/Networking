@@ -1,0 +1,3 @@
+- only data link layer adds trailer to the data and rest of the layers just adds header
+- mac add node to node change hoy
+- ethernet is media dependent because of half duplex csma/cd.. but ip is media indeoendent
