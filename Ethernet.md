@@ -1,7 +1,8 @@
 ### 🔌 **What Ethernet Is**
 - A wired networking technology for connecting devices in a LAN — uses cables (usually Cat5e, Cat6, etc.) 
 - Defines rules for how data is transmitted over those cables.
-- It’s one of the most widely used networking technologies in the world.
+- Technical name for ethernet is 802.3
+- If we buy an Ethernet NIC card, it operates up to Layer 2 of the OSI model
 
 <br>
 
