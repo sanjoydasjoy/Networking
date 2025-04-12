@@ -1,3 +1,6 @@
 - only data link layer adds trailer to the data and rest of the layers just adds header
 - mac add node to node change hoy
 - ethernet is media dependent because of half duplex csma/cd.. but ip is media indeoendent
+- transport layer is connection oriented but network layer isnt
+- The frame size in Ethernet ranges from 64 bytes to 1,518 bytes, including the header and trailer.
+- ip is the onky protocol in the network layer
