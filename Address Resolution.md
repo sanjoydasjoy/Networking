@@ -84,32 +84,40 @@ ___
 
 
 
-# What is ARP? 
+# ARP Table and Its Location
 
-ARP (Address Resolution Protocol) helps your device figure out who to send data to on the local network.
+## What is an ARP Table?
+The ARP (Address Resolution Protocol) table is a network database that stores the mappings between IP addresses and MAC addresses. When a device wants to communicate with another device on the same local network, it uses this table to find the corresponding MAC address for the target IP address. This mapping allows the device to send the data correctly over the network.
 
-Imagine this:
-- You know someone’s name (their IP address)
-- But you don’t know their face (their MAC address)
-- So you ask out loud, "Hey, who is John?" (ARP Request)
-- John replies, "I’m John, and here’s my face" (ARP Reply)
+## Where Does the ARP Table Reside?
 
-That’s what ARP does — it links names (IP addresses) to faces (MAC addresses) so computers can talk.
+The ARP table resides in the memory (RAM) of each device on the network. Each device, including PCs, smartphones, routers, and switches, keeps its own ARP table to resolve IP-to-MAC address mappings for communication within the local network.
+
+### Types of Devices and Their ARP Tables:
+
+- Windows/Linux/macOS Computer:  
+  On personal computers, the ARP table is stored in the computer’s RAM. You can view and manage this table using network commands like:  
+  - Windows: `arp -a`  
+  - Linux/macOS: `ip neigh` or `arp`
+
+- Routers/Switches:  
+  Routers and switches also keep ARP tables to map IP addresses to MAC addresses of devices on their interfaces. This helps them forward packets to the correct destination device.
+
+## How Long Does the ARP Table Last?
+
+- Dynamic Entries: These are learned automatically via ARP requests and time out after a short period (usually minutes). If the device does not need the mapping again in that time, it will remove the entry.
+
+- Static Entries: These are manually configured and remain in the ARP table until the device is restarted or the entry is manually deleted.
+
+## Why is the ARP Table Important?
+
+The ARP table is essential for devices to communicate effectively on the same network. By maintaining a list of IP-to-MAC address mappings, devices can avoid unnecessary ARP requests and ensure that data packets reach their correct destination. Without the ARP table, devices would need to broadcast requests for every communication, leading to inefficiency.
+
+
 
 <br><br>
 
-## Why Do We Need ARP?
-
-On a local network (LAN):
-- Devices use MAC addresses to deliver messages
-- But software and applications use IP addresses
-
-ARP acts like a translator. It helps your device say:
-"I want to send this to 192.168.1.5. But what's the MAC address for that IP?"
-
-<br><br>
-
-## How ARP Works – Step by Step
+## How ARP Works 
 
 ### Local Communication (Same Network)
 
