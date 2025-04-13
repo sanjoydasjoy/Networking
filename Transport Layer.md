@@ -1,8 +1,40 @@
+```
+Transport Layer/
+├── Transport Layer/
+│   ├── Role of the Transport Layer/
+│   ├── Responsibilities of the Transport Layer/
+│   ├── Why Transport Protocols Are Needed/
+├── TCP Overview (Transmission Control Protocol)/
+│   ├── Key Features of TCP/
+│   ├── TCP Header Fields/
+│   ├── Applications That Use TCP/
+├── UDP Overview/
+│   ├── Key Features of TCP:
+│   ├── TCP Header Fields
+│   ├── Applications That Use TCP
+├── Port Numbers/
+│   ├── Socket Pairs:
+│   ├── Port Number Ranges
+│   ├── Examples of Well-Known Ports
+│   ├── Checking Connections with netstat
+├── Port Numbers/
+│   ├── Socket Pairs:
+│   ├── Port Number Ranges
+│   ├── Examples of Well-Known Ports
+│   ├── Checking Connections with netstat
+├── TCP Communication Process/
+│   ├── TCP Server Processes
+│   ├── TCP Connection Establishment (Three-Way Handshake)
+│   ├── ACK SYN numbers in Three Way HandShake:
+│   ├── Session Termination
+│   ├── Purpose of the Three-Way Handshake
+│   ├── TCP Control Flags
+```
+
 # Transport Layer
 
 The transport layer is the fourth layer in the OSI model. It is responsible for end-to-end communication between devices. This layer ensures that data is delivered reliably, in order, and without errors.
 
-## Transportation of Data
 
 ### Role of the Transport Layer  
 - Responsible for logical communication between applications on different devices  
@@ -17,8 +49,6 @@ The transport layer is the fourth layer in the OSI model. It is responsible for 
 3. Multiplexing and Demultiplexing – Allows multiple applications to send/receive data over the network simultaneously by using port numbers.
 
 <br><br>
-
-### Transport Layer Protocols
 
 ### Why Transport Protocols Are Needed  
 - IP doesn’t handle how packets are delivered  
@@ -49,8 +79,8 @@ UDP is used when speed matters more than reliability. Key features:
 
 ## Choosing Between TCP and UDP  
 
-- Use **UDP** for small, fast request-reply apps (like DNS, voice, video calls, game traffic)  
-- Use **TCP** when it's important that all data is received in order (like web browsing, file transfers, emails)
+- Use UDP for small, fast request-reply apps (like DNS, voice, video calls, game traffic)  
+- Use TCP when it's important that all data is received in order (like web browsing, file transfers, emails)
 
 
 
@@ -169,9 +199,9 @@ ___
 
 # Port Numbers
 
-#### Why Port Numbers Matter
 
-Port numbers help transport layer protocols (TCP and UDP) handle multiple conversations at once. Each application uses a unique port number so that data reaches the correct destination.
+
+Port numbers help transport layer protocols (TCP and UDP) handle multiple conversations at once. Each application uses a unique port number so that data reaches the correct destination. <br>
 
 - The source port identifies the sending application on the local device  
 - The destination port identifies the receiving application on the remote device
