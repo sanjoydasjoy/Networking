@@ -69,22 +69,8 @@ When your device knows the IP address but needs the MAC address, it uses:
 - For IPv6:  
   ICMPv6 (Neighbor Discovery) – works similarly to ARP but designed for IPv6 networks
 
-<br><br>
 
-## Packet Tracer Activity – What You’ll Do
 
-This activity helps you see and understand how MAC and IP addresses work in real scenarios using Cisco Packet Tracer
-
-### Tasks:
-
-1. Local Communication  
-   - Watch how a device sends data directly to another device on the same network  
-   - Observe how the MAC address of the destination device is used
-
-2. Remote Communication  
-   - Watch how a device sends data to a different network  
-   - See that it first uses the MAC address of the router (default gateway)  
-   - Learn how the router then forwards it toward the final destination using IP
 
 
 
@@ -135,7 +121,40 @@ Say your computer (192.168.1.2) wants to send data to a printer (192.168.1.10)
 4. The printer replies with its MAC address
 5. The computer stores that info in the ARP table and sends the message to that MAC
 
-The next time it needs to send something to the printer, it won’t ask again — it already knows
+The next time it needs to send something to the printer, it won’t ask again — it already knows <br><br>
+
+
+another example:
+
+<br><br>
+
+Say **Phone A** (192.168.1.2) wants to send a photo to **Phone B** (192.168.1.10) over the same Wi-Fi network:
+
+- Phone A first checks its ARP table, which stores recently learned IP-to-MAC address mappings  
+- If the MAC address for 192.168.1.10 is already there, it uses it directly to send the photo  
+- If it’s not found, Phone A sends out a message to everyone on the network:  
+  "Who has 192.168.1.10?"  
+- Phone B sees this and replies with its MAC address  
+- Phone A stores this info in its ARP table and sends the photo to that MAC address  
+- Next time it wants to send something to Phone B, it uses the stored MAC address — no need to ask again
+
+  
+<br><br>
+question is how they finds out the ip of the device to send:
+
+1. Pre-configured IP  
+Devices may be manually assigned and told to use a specific IP, like 192.168.1.10 for a printer.
+
+2. DNS or name resolution  
+Names like printer.local are resolved to IPs using DNS, NetBIOS, or mDNS/Bonjour.
+
+3. Broadcast discovery  
+Devices scan the network or send broadcast messages to find others, which reply with their IPs.
+
+4. Router or DHCP table  
+The router keeps a list of connected devices and their IPs, which can be checked or scanned.
+
+
 
 <br><br>
 
@@ -172,6 +191,13 @@ Example output:
 
 <br><br>
 
+| Type     | How It's Added                   | Lifespan            | Example Use                                                                 |
+|----------|----------------------------------|----------------------|------------------------------------------------------------------------------|
+| Dynamic  | Learned via ARP                  | Temporary (expires)  | Communication with a specific device like a printer or another computer     |
+| Static   | Manually set or built-in mappings | Permanent            | Broadcast (192.168.1.255 → ff-ff-ff-ff-ff-ff), or multicast (224.0.0.251 → 01-00-5e-00-00-fb for mDNS) |
+
+<br><br>
+
 ## ARP Table Timeout and Maintenance
 
 - Entries in the ARP table are temporary
@@ -199,17 +225,7 @@ Example output:
 - Enterprise-grade network switches may offer features like Dynamic ARP Inspection (DAI) to prevent spoofed ARP replies
 - In very secure environments, some admins use static ARP entries to lock mappings in place
 
-<br><br>
 
-## What You Will Do in the Packet Tracer Activity
-
-In your lab simulation, you’ll observe how ARP works in a practical setting
-
-You’ll practice:
-
-1. Watching an ARP Request and Reply in real time
-2. Looking at the switch’s MAC address table to see how it tracks device connections
-3. Seeing how ARP helps a device communicate with a different network by finding the gateway’s MAC address
 
 
 <br>
