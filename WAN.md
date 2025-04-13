@@ -1,3 +1,12 @@
+```
+WAN/
+├── LAN vs. WAN/
+├── Private vs. Public WAN/
+├── WAN Topologies/
+├── Carrier Connections/
+├── Evolving networks/
+```
+
 # LAN vs. WAN
 
 A LAN is a network that connects computers and devices in a small area like a home, school, or office. It helps people share files, printers, and internet easily within a short distance. A WAN is a network that connects computers and networks over a very large area, like between cities or countries. The internet is the most common example of a WAN.
