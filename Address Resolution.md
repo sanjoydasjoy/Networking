@@ -64,13 +64,10 @@ You drop it at your local post office (router), and they take care of the delive
 When your device knows the IP address but needs the MAC address, it uses:
 
 - For IPv4:  
-  ARP (Address Resolution Protocol) – sends a broadcast asking “Who has this IP?”
+  ARP (Address Resolution Protocol) is used to resolve an IP address to a MAC address by sending a broadcast request.
 
 - For IPv6:  
-  ICMPv6 (Neighbor Discovery) – works similarly to ARP but designed for IPv6 networks
-
-
-
+  Neighbor Discovery Protocol (NDP), which uses ICMPv6 messages, is used for the same purpose but with additional functions (like router discovery).
 
 
 
