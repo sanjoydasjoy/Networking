@@ -73,6 +73,7 @@ ___
 | **Standardization** | Developed by ISO as a standard framework | Developed by the U.S. DoD for internetworking |
 | **Layer Separation** | Clear distinction between all layers (especially Presentation and Session) | Combines some OSI layers (e.g., Application, Presentation, and Session into one) |
 | **Protocol Dependency** | Protocol-independent | Built around standard protocols like TCP, IP, HTTP, etc. |
+| **Reliability** | It is less reliable.	 | TCP/IP is more reliable |
 
 <br><br>
 
