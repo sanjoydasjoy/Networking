@@ -4,8 +4,9 @@
 - Technical name for ethernet is 802.3
 - If we buy an Ethernet NIC card, it operates up to Layer 2 of the OSI model
 - LLC is the part of driver, its 802.2
-- MAC (half of data link layer) and physical layer is basically the ethernet and called 802.3
+- Ethernet operates at the MAC sublayer (half of data link layer) and the physical layer, and called 802.3 
 
+<br>
   
 <img src="assets/ethernet1.png"  width="400">
 
@@ -19,6 +20,14 @@
   - Each device (PC, laptop, console) plugs into one of the router's Ethernet ports. Most routers have 4 LAN ports, but some may have more.
   - The router's WAN port connects to your modem or incoming internet line.
 - If you need more devices connected than the router has ports, you can use a network switch. A switch adds more Ethernet ports, allowing more devices to be connected to the router.
+```
+A switch connects to one Ethernet port on the router and provides multiple Ethernet ports of its own.
+It’s like a smart multiplug for Ethernet: while a normal multiplug simply splits power,
+a switch splits the network and intelligently manages traffic.
+Internally, it handles data flow between connected devices using switching logic,
+effectively turning one router port into many usable connections—without slowing down or mixing up the traffic.
+
+```
 - Transfers files and shares resources between devices: Devices connected via Ethernet can send and receive data (files, etc.) from each other quickly.
 - Works with Wi-Fi: Ethernet doesn’t replace Wi-Fi; it just gives wired access instead of wireless. Both can exist in the same network.
 - Perfect for gaming, video calls, or large downloads because it’s more stable than Wi-Fi.
@@ -31,6 +40,12 @@
 
 ### ⚙️ How It Works
 - Each device has a network interface card (NIC), which is a hardware component that allows it to connect to the network. The NIC has a unique MAC address (Media Access Control address), which helps identify the device on the network.
+<br>
+
+<img src="assets/nic.png"  width="400">
+
+<br>
+
 - Data is sent in small chunks called frames. A frame contains not only the data being sent but also control information (like the sender's MAC address, the receiver's MAC address, and error-checking information).
 - Ethernet defines the rules for how these frames are formatted, sent, and checked for errors. This ensures that the data is correctly transmitted, and if there are any issues (like data corruption), the frame can be flagged and sent again if necessary.
 
@@ -43,7 +58,7 @@
 |---------------|-----------------------------|-----------------------------|
 | Speed         | Faster                      | Slower (in most cases)      |
 | Stability     | More stable (less interference) | Can be unstable             |
-| Mobility      | Not portable (needs cable)  | Fully wireless              |
+| Mobility      | Less portable (needs cable)  | Fully wireless              |
 
 <br>
 
@@ -70,9 +85,9 @@ ___
 
 ### **B. MAC (Media Access Control) – IEEE 802.3**
 - Handles:
-  - **Encapsulation**: Creating and formatting Ethernet frames.
+  - **Ethernet Encapsulation**: Creating and formatting Ethernet frames.
   - **Media access**: When and how to send data.
-  - **Addressing**: Adds MAC addresses for delivery.
+  - **MAC Addressing**: Adds MAC addresses for delivery.
 
 <br><br>
 
@@ -465,7 +480,7 @@ ___
 
 <br>
 
-### How Switches Send Data
+# How Switches Send Data
 
 Switches are like traffic police for data on a network. They help guide data (called **frames**) to the right computer or device.
 <br>
@@ -490,6 +505,10 @@ Switches are like traffic police for data on a network. They help guide data (ca
 <br><br>
 
 ### How Switches Store Messages
+
+A switch connects to one Ethernet port on the router and provides multiple Ethernet ports of its own. It’s like a smart multiplug for Ethernet: while a normal multiplug simply splits power, a switch splits the network and intelligently manages traffic. Internally, it handles data flow between connected devices using switching logic, effectively turning one router port into many usable connections—without slowing down or mixing up the traffic.
+
+<br>
 
 Sometimes, a switch has to **wait before sending**, like when a road is full.
 
