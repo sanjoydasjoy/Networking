@@ -348,13 +348,12 @@ Ending a TCP session also involves multiple steps:
 
 ### Purpose of the Three-Way Handshake
 
-The handshake ensures:
+The **three-way handshake** is used to **establish a reliable TCP connection** between two devices (client and server) before data is transmitted.
 
-- The destination device is active on the network.
-- The destination has an open service on the intended port.
-- The client communicates its intent to start a session.
-
-After data transfer, the session is closed and the connection is terminated to maintain reliability.
+It ensures that:
+1. **Both sides are ready to communicate.**
+2. **Both sides agree on initial sequence numbers.**
+3. **The connection is reliable and synchronized.**
 
 <br><br>
 
