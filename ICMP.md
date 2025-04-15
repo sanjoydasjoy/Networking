@@ -122,18 +122,71 @@ If the ping is successful:
 
 However, sometimes ping to a remote host will fail even if everything is working fine. This is because some networks block ICMP messages for security reasons. In that case, a failed ping does not always mean a broken connection.
 
-<br>
+<br><br><br>
 
-### What is Traceroute?
+# What is Traceroute?
 
-Traceroute is a tool used to show the path that data takes to reach another device across a network.
+**Traceroute** is a tool used to discover(map) the path (routers/hops) that packets take to reach a destination on a network.
 
 It works by sending packets with small values for the TTL (Time To Live). TTL is a number that limits how many devices (called hops) a packet can pass through. Each router that receives the packet decreases the TTL by 1. If TTL becomes 0, the router drops the packet and sends back an ICMP Time Exceeded message.
 
-Traceroute uses this behavior to find out each device (router) in the path:
-- First, it sends a packet with TTL = 1. The first router drops it and replies.
-- Then it sends TTL = 2. The second router drops it and replies.
-- This continues until the packet reaches the final destination.
+
+
+
+<br><br>
+
+### How does Traceroute work?
+It uses a trick with the **TTL (Time To Live)** field in IP packets:
+
+1. Traceroute sends a test packet with **TTL = 1**  
+   → First router gets it, decreases TTL to 0, drops it, and replies with an **ICMP "Time Exceeded"** message.  
+   → Traceroute notes this router.
+
+2. Then it sends another test packet with **TTL = 2**  
+   → It reaches the second router, which drops it and replies.
+
+3. This continues with TTL = 3, 4, 5… until it reaches the final destination.  
+   → The destination replies with an ICMP "Port Unreachable" or other response.
+
+Each step tells Traceroute **which router** was next in the path and **how long** it took to get there.
+
+<br><br>
+
+### What happens to those earlier packets (TTL = 1, 2, etc.)?
+They are **dropped intentionally** by the routers as part of the test.  
+Traceroute doesn’t expect them to arrive — it’s using their **failures** to learn the path.
+
+They are like test runners who stop after 1km, 2km, 3km — to see how far they get before being stopped.
+
+<br><br>
+
+### So when are the **real data packets** sent?
+- **After** traceroute is done (or separately), your actual data packets are sent.
+- These packets **do not use low TTL values** — they are set high enough (like 64 or 128) to reach the destination directly.
+- Routers along the way **know where to forward the packets**, using their **routing tables**.
+
+<br><br>
+
+### Real-life analogy:
+You want to visit a friend in another city.
+
+- **Traceroute** is like asking:  
+  “Hey, which highways and toll booths will I pass through if I go to that city?”
+
+- You get a list:  
+  “You’ll pass through Route A, Toll Gate 1, Toll Gate 2…”
+
+- **Then** you actually get in your car and **drive the full route** (that’s your **real packet**).
+
+The **actual drive** doesn’t involve asking anyone again — you just follow the signs.
+
+<br>
+
+So in short:
+- Traceroute = **testing and mapping** the route  
+- Real data = **uses the path** directly, as defined by routers
+
+<br><br>
 
 Traceroute shows:
 - The IP address or hostname of each router in the path
