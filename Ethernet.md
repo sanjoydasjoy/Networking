@@ -522,6 +522,20 @@ There are 2 ways it stores messages:
    - All lanes use one big waiting area.
    - It’s smarter and more flexible.
 
+```
+
+<br><br>
+
+In **port-based buffering**, frames can only be stored in the memory space assigned to that specific port.
+So if a frame is coming for **Port 1** but **Port 1's memory is full**, it **can't use memory**
+from any other port (like Port 2). The frame for Port 1 gets **dropped** because the switch doesn't move data between port buffers.
+
+Just like an app that runs on a specific port—if that port is "full" (memory-wise), it can't keep receiving more data until space is cleared.
+
+In **shared memory buffering**, all ports share one big memory pool, which can store frames for any port, avoiding this limitation.
+
+```
+
 <br><br>
 
 ### Duplex and Speed
