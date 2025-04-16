@@ -79,6 +79,49 @@ Think of it like **renting an IP address** for a limited time.
 
 
 
+<br><br>
+
+
+### **4 DHCP Steps – DORA:**
+
+1. **D – Discover**  
+   - The client (your device) broadcasts a **DHCP Discover** message to find available DHCP servers.
+
+2. **O – Offer**  
+   - The DHCP server responds with a **DHCP Offer**, suggesting an available IP address and configuration details.
+
+3. **R – Request**  
+   - The client replies with a **DHCP Request**, asking to use the offered IP address.
+
+4. **A – Acknowledge**  
+   - The server sends a **DHCP Acknowledgement (ACK)**, confirming that the IP address is leased to the client.
+
+---
+
+### **Summary Table:**
+
+| Step | Name       | Who Sends It | Purpose                              |
+|------|------------|--------------|--------------------------------------|
+| 1    | Discover   | Client       | Looking for DHCP server              |
+| 2    | Offer      | Server       | Offers an IP address                 |
+| 3    | Request    | Client       | Requests offered IP                  |
+| 4    | Acknowledge| Server       | Confirms and assigns the IP          |
+
+
+
+### **What about the public IP?**
+
+- The **router** itself (Wi-Fi access point) gets **one public IP address** from the **ISP (Internet Service Provider)**.
+- All your internal devices **share that one public IP** using a process called **NAT (Network Address Translation)**.
+
+
+
+### **Conclusion:**
+- **The IP from DHCP is a Private IP.**
+- **The Public IP is assigned to your router by the ISP.**
+- **NAT helps all devices use the internet through that one public IP.**
+
+
 <br>
 
 ___
