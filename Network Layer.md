@@ -109,3 +109,109 @@ ___
 
 <br>
 
+# How a Host Routes
+
+### **How a Host Sends Data (Routing Basics):**
+
+1. **Every device** (PC, phone, etc.) creates its **own data packets**.
+2. Each device has a **routing table** to decide **where to send the data**.
+
+<br><br>
+
+### **Where can a device send data?**
+
+- **To itself** → uses `127.0.0.1` (loopback).
+- **To local device** → same network (LAN).
+- **To remote device** → different network.
+
+<br><br>
+
+### **How does it decide if local or remote?**
+
+- Uses its **IP address**, **subnet mask**, and the **destination IP**.
+- If destination is:
+  - **Same network → send directly.**
+  - **Different network → send to default gateway.**
+
+<br><br>
+
+### **What is a Default Gateway (DGW)?**
+
+- It’s the **router**.
+- Helps send data to **other networks (outside the LAN)**.
+- Must be in the **same IP range** as the device.
+
+<br><br>
+
+### **How does a device know its Default Gateway?**
+
+- **IPv4:** Given by **DHCP** or set manually.
+- **IPv6:** Learns using **Router Solicitation (RS)** or set manually.
+
+<br><br>
+
+### **If no default gateway → can’t access the internet.**
+
+<br><br>
+
+### **How to see routing table on Windows:**
+
+- Use command:  
+  `route print` or `netstat -r`
+
+
+
+
+<br>
+
+___
+
+<br>
+
+# **What is Routing?**  
+Routing means **choosing the best path** for data to travel from one network to another. Routers do this job.
+
+<br><br>
+
+### **When a router gets a packet, it:**
+1. Looks at the **destination IP**.
+2. Checks its **routing table**.
+3. Decides **where to send** the packet next.
+
+<br><br>
+
+### **Types of Routes in Routing Table:**
+
+1. **Directly Connected**  
+   - Router is directly connected to that network.
+
+2. **Remote Routes**  
+   - Router is **not directly connected**.  
+   - Learned by:
+     - **Static route** (manually set)
+     - **Dynamic route** (learned automatically)
+
+3. **Default Route**  
+   - Used when no specific route is found.  
+   - Sends packet to a general direction.
+
+<br><br>
+
+### **Static Routing**
+- Manually configured
+- Doesn’t change by itself
+- Good for **small or simple networks**
+
+<br><br>
+
+### **Dynamic Routing**
+- Learns routes automatically
+- Updates when the network changes
+- Good for **large or changing networks**
+
+
+<br>
+
+___
+
+<br>
