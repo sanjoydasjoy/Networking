@@ -1,0 +1,47 @@
+Router e always basic configuration kora lagbe
+so always CLI e jete hobe
+
+
+router cli commands:
+
+
+enter
+no
+enter
+enable
+conf
+t
+?
+again ? 
+hostname R#1
+
+[now to configure fast ethernet]
+
+interface fastEthernet 1/0
+
+ip address 172.10.5.126 255.255.255.128
+
+no shutdown
+
+
+[ now that the wire is now green, we test if its working by transferring a packet from a pc to router]
+
+
+so we can move to switch: its cli
+
+
+
+
+ip address 172.10.10.1 255.255.255.128
+
+
+
+
+show ip interface brief
+
+
+
+switch->router
+router->server
+
+
